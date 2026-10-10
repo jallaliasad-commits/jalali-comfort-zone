@@ -1,0 +1,796 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jalali Comfort Zone | Hotel & Restaurant in Haripur</title>
+  <meta name="description" content="Welcome to Jalali Comfort Zone, University Road, Haripur. Explore comfortable rooms, restaurant dining and contact us for booking enquiries.">
+
+  <style>
+    :root {
+      --dark: #14251f;
+      --green: #245b45;
+      --gold: #d7ad68;
+      --cream: #faf7f0;
+      --white: #ffffff;
+      --text: #25312b;
+      --muted: #68736c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img, video { display: block; width: 100%; }
+    button, input, select, textarea { font: inherit; }
+
+    .container {
+      width: min(1160px, 91%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: white;
+      padding: 9px 0;
+      font-size: 13px;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 3px 18px #0000000c;
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--dark);
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: var(--gold);
+      font-size: 25px;
+    }
+
+    .brand strong { display: block; font-size: 19px; }
+    .brand small { color: var(--muted); font-size: 11px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 21px;
+      border-radius: 7px;
+      background: var(--green);
+      color: white;
+      border: 0;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .btn:hover { background: var(--dark); transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--dark); }
+    .btn-outline { border: 1px solid white; background: transparent; }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(10,24,18,.88), rgba(10,24,18,.42)),
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .hero-content { max-width: 700px; padding: 90px 0; }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.08;
+      margin-bottom: 22px;
+    }
+
+    .hero p { max-width: 570px; color: #f0f0e9; margin-bottom: 28px; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+
+    .highlights {
+      background: white;
+      box-shadow: 0 8px 35px #0000000a;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .highlight {
+      padding: 25px 15px;
+      text-align: center;
+      border-right: 1px solid #e8e5dd;
+    }
+
+    .highlight:last-child { border-right: 0; }
+    .highlight b { display: block; color: var(--green); font-size: 16px; }
+    .highlight span { color: var(--muted); font-size: 13px; }
+
+    section { padding: 85px 0; }
+
+    .section-head {
+      max-width: 680px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-head .eyebrow { color: var(--green); }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dark);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-head p { color: var(--muted); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-photo {
+      height: 420px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .about-copy p { color: var(--muted); margin: 17px 0; }
+    .check-list { list-style: none; margin: 22px 0; }
+    .check-list li { margin: 11px 0; }
+    .check-list li::before { content: "✓"; color: var(--green); font-weight: bold; margin-right: 10px; }
+
+    .rooms { background: #f1eee6; }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .room-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px #00000009;
+      transition: .25s;
+    }
+
+    .room-card:hover { transform: translateY(-5px); }
+    .room-card img { height: 230px; object-fit: cover; }
+
+    .room-body { padding: 23px; }
+    .room-body h3 { color: var(--dark); font-size: 21px; margin-bottom: 8px; }
+    .room-body p { color: var(--muted); font-size: 14px; }
+    .room-features { margin: 15px 0 20px; font-size: 13px; color: var(--green); }
+    .room-bottom { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .price { color: var(--green); font-weight: 800; font-size: 19px; }
+    .price small { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 8px 25px #0000000b;
+    }
+
+    .video-card video {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #17221c;
+    }
+
+    .video-caption { padding: 18px 20px; }
+    .video-caption h3 { color: var(--dark); margin-bottom: 5px; }
+    .video-caption p { color: var(--muted); font-size: 14px; }
+
+    .restaurant {
+      background: var(--dark);
+      color: white;
+    }
+
+    .restaurant .section-head h2 { color: white; }
+    .restaurant .section-head p { color: #c7d0ca; }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .food-card {
+      background: #20372c;
+      border: 1px solid #ffffff16;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .food-card img { height: 210px; object-fit: cover; }
+    .food-info { padding: 20px; }
+    .food-info h3 { margin-bottom: 6px; }
+    .food-info p { color: #c7d0ca; font-size: 14px; }
+    .food-info strong { display: block; color: var(--gold); margin-top: 12px; }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .facility {
+      padding: 25px 15px;
+      background: white;
+      border: 1px solid #eae6dc;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .facility .symbol { font-size: 30px; margin-bottom: 10px; }
+    .facility h3 { font-size: 16px; margin-bottom: 6px; color: var(--dark); }
+    .facility p { font-size: 13px; color: var(--muted); }
+
+    .contact { background: #f1eee6; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
+    }
+
+    .contact-info, .contact-form {
+      padding: 32px;
+      background: white;
+      border-radius: 12px;
+    }
+
+    .contact-info h3, .contact-form h3 {
+      color: var(--dark);
+      font-size: 24px;
+      margin-bottom: 17px;
+    }
+
+    .contact-line { margin: 18px 0; }
+    .contact-line b { display: block; color: var(--green); }
+    .contact-line span { color: var(--muted); overflow-wrap: anywhere; }
+
+    .field { margin: 13px 0; }
+    .field label { display: block; font-weight: 700; font-size: 13px; margin-bottom: 6px; }
+
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #dcded8;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .field textarea { min-height: 100px; resize: vertical; }
+
+    footer { background: #0d1b15; color: white; padding: 32px 0; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer p { color: #bfc8c2; font-size: 13px; }
+    footer a { color: var(--gold); }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 30;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 26px;
+      box-shadow: 0 5px 18px #0003;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 12px; font-size: 12px; }
+      .room-grid, .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 30px; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar .container { justify-content: center; text-align: center; }
+      nav { padding: 12px 0; align-items: flex-start; flex-direction: column; gap: 12px; }
+      .nav-links { width: 100%; flex-wrap: wrap; gap: 13px; }
+      .nav-links .btn { padding: 9px 12px; }
+      .hero { min-height: 520px; }
+      .hero-content { padding: 70px 0; }
+      .highlight-grid { grid-template-columns: 1fr; }
+      .highlight { border-right: 0; border-bottom: 1px solid #e8e5dd; padding: 16px; }
+      .about-grid, .room-grid, .video-grid, .food-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-photo { height: 290px; }
+      section { padding: 60px 0; }
+      .contact-info, .contact-form { padding: 23px; }
+      .room-card img { height: 220px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>📍 University Road, Haripur, Khyber Pakhtunkhwa</span>
+      <span>📞 0343 4996491</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">
+        <span class="brand-icon">J</span>
+        <span>
+          <strong>Jalali Comfort Zone</strong>
+          <small>HOTEL & RESTAURANT</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#videos">Room Videos</a>
+        <a href="#restaurant">Restaurant</a>
+        <a href="#contact" class="btn">Book / Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Welcome to Jalali Comfort Zone</div>
+          <h1>Your Comfort.<br>Your Stay.<br>Your Experience.</h1>
+          <p>
+            Discover a welcoming place to stay, relax and enjoy a meal.
+            Visit us on University Road, Haripur, and contact our team
+            for room availability and booking enquiries.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#rooms">Explore Rooms</a>
+            <a class="btn btn-outline" href="#contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="highlights">
+      <div class="container highlight-grid">
+        <div class="highlight">
+          <b>🛏️ Comfortable Stay</b>
+          <span>Explore room options</span>
+        </div>
+        <div class="highlight">
+          <b>🍽️ Restaurant</b>
+          <span>Discover dining options</span>
+        </div>
+        <div class="highlight">
+          <b>📍 Haripur Location</b>
+          <span>University Road</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <img class="about-photo"
+          src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1000&q=85"
+          alt="Comfortable hotel room">
+
+        <div class="about-copy">
+          <div class="eyebrow">About Our Place</div>
+          <h2>A Welcoming Place to Stay and Dine</h2>
+          <p>
+            Welcome to Jalali Comfort Zone, located on University Road,
+            Haripur. Our website helps visitors explore our room options,
+            see sample room videos and contact us directly.
+          </p>
+          <p>
+            Whether you are planning a visit or looking for a place to
+            enjoy a meal, contact us to confirm current facilities,
+            availability and prices before visiting.
+          </p>
+          <ul class="check-list">
+            <li>Room options for different needs</li>
+            <li>Restaurant and dining enquiries</li>
+            <li>Direct WhatsApp contact</li>
+            <li>Easy booking enquiry form</li>
+          </ul>
+          <a class="btn" href="#contact">Ask About Availability</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms" id="rooms">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Our Accommodation</div>
+          <h2>Explore Our Rooms</h2>
+          <p>
+            View these sample room categories. Confirm actual room types,
+            facilities and rates with us before making a booking.
+          </p>
+        </div>
+
+        <div class="room-grid">
+          <article class="room-card">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85"
+              alt="Standard room example">
+            <div class="room-body">
+              <h3>Standard Room</h3>
+              <p>A simple, comfortable room option for your visit.</p>
+              <div class="room-features">🛏️ Sleeping area · 🚿 Bathroom</div>
+              <div class="room-bottom">
+                <span class="price">Ask for price<small>Rate per night to be confirmed</small></span>
+                <a class="btn" href="#contact">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=85"
+              alt="Deluxe room example">
+            <div class="room-body">
+              <h3>Deluxe Room</h3>
+              <p>A room option for guests looking for extra comfort.</p>
+              <div class="room-features">🛏️ Room space · ✨ Comfort</div>
+              <div class="room-bottom">
+                <span class="price">Ask for price<small>Rate per night to be confirmed</small></span>
+                <a class="btn" href="#contact">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=85"
+              alt="Family room example">
+            <div class="room-body">
+              <h3>Family Room</h3>
+              <p>An option for families, subject to actual availability.</p>
+              <div class="room-features">👨‍👩‍👧‍👦 Family option · 🛏️ Sleeping area</div>
+              <div class="room-bottom">
+                <span class="price">Ask for price<small>Rate per night to be confirmed</small></span>
+                <a class="btn" href="#contact">Enquire</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Take a Closer Look</div>
+          <h2>Room Video Tour</h2>
+          <p>
+            Add your own room walkthrough clips here so visitors can see
+            the actual rooms before contacting you.
+          </p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <video controls preload="metadata" playsinline
+              poster="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80">
+              <source src="room1.mp4" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+            <div class="video-caption">
+              <h3>Standard Room Tour</h3>
+              <p>Replace room1.mp4 with your own room video clip.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video controls preload="metadata" playsinline
+              poster="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80">
+              <source src="room2.mp4" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+            <div class="video-caption">
+              <h3>Deluxe Room Tour</h3>
+              <p>Replace room2.mp4 with another room walkthrough.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="restaurant" id="restaurant">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Restaurant & Dining</div>
+          <h2>Enjoy Your Dining Experience</h2>
+          <p>
+            Explore these sample food categories. Ask us for the current
+            menu, available dishes and prices.
+          </p>
+        </div>
+
+        <div class="food-grid">
+          <article class="food-card">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=85"
+              alt="Pizza">
+            <div class="food-info">
+              <h3>Pizza & Fast Food</h3>
+              <p>Ask about available pizza and fast-food options.</p>
+              <strong>Menu prices on enquiry</strong>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+              alt="Meal and salad">
+            <div class="food-info">
+              <h3>Meals & Snacks</h3>
+              <p>Contact us to check today's available dishes.</p>
+              <strong>Menu prices on enquiry</strong>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85"
+              alt="Coffee">
+            <div class="food-info">
+              <h3>Tea & Beverages</h3>
+              <p>Ask our team about available drinks.</p>
+              <strong>Menu prices on enquiry</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="facilities">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Guest Information</div>
+          <h2>Facilities & Services</h2>
+          <p>Confirm which facilities are currently available when enquiring.</p>
+        </div>
+
+        <div class="facilities-grid">
+          <div class="facility">
+            <div class="symbol">🛏️</div>
+            <h3>Room Options</h3>
+            <p>Ask about available room types.</p>
+          </div>
+          <div class="facility">
+            <div class="symbol">🍽️</div>
+            <h3>Dining</h3>
+            <p>Ask about the current food menu.</p>
+          </div>
+          <div class="facility">
+            <div class="symbol">📱</div>
+            <h3>WhatsApp</h3>
+            <p>Contact us for booking enquiries.</p>
+          </div>
+          <div class="facility">
+            <div class="symbol">📍</div>
+            <h3>Location</h3>
+            <p>University Road, Haripur.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Get in Touch</div>
+          <h2>Room Booking & Enquiries</h2>
+          <p>
+            Send your enquiry on WhatsApp. A booking is not confirmed
+            until the hotel confirms availability and details.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+
+            <div class="contact-line">
+              <b>📍 Address</b>
+              <span>University Road, Haripur, Khyber Pakhtunkhwa, Pakistan</span>
+            </div>
+
+            <div class="contact-line">
+              <b>📞 WhatsApp / Phone</b>
+              <span>0343 4996491</span>
+            </div>
+
+            <div class="contact-line">
+              <b>🕒 Opening Hours</b>
+              <span>Please contact us to confirm current timings.</span>
+            </div>
+
+            <a class="btn" target="_blank" rel="noopener"
+              href="https://wa.me/923434996491?text=Assalam-o-Alaikum%2C%20I%20would%20like%20to%20ask%20about%20Jalali%20Comfort%20Zone.">
+              Chat on WhatsApp
+            </a>
+
+            <p style="font-size:13px;color:#68736c;margin-top:18px">
+              Map directions:
+              <a style="color:#245b45;text-decoration:underline"
+                target="_blank" rel="noopener"
+                href="https://www.google.com/maps/search/?api=1&query=University+Road+Haripur+Pakistan">
+                Search University Road, Haripur on Google Maps
+              </a>
+            </p>
+          </div>
+
+          <form class="contact-form" id="bookingForm">
+            <h3>Send a Booking Enquiry</h3>
+
+            <div class="field">
+              <label for="guestName">Your Name</label>
+              <input id="guestName" name="guestName" type="text"
+                placeholder="Enter your name" required>
+            </div>
+
+            <div class="field">
+              <label for="guestPhone">Your Contact Number</label>
+              <input id="guestPhone" name="guestPhone" type="tel"
+                placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="field">
+              <label for="roomType">Room Type</label>
+              <select id="roomType" name="roomType" required>
+                <option value="">Select a room</option>
+                <option>Standard Room</option>
+                <option>Deluxe Room</option>
+                <option>Family Room</option>
+                <option>Other / Need information</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="checkin">Expected Check-in Date</label>
+              <input id="checkin" name="checkin" type="date">
+            </div>
+
+            <div class="field">
+              <label for="message">Additional Details</label>
+              <textarea id="message" name="message"
+                placeholder="Number of guests or any questions"></textarea>
+            </div>
+
+            <button class="btn" type="submit" style="width:100%">
+              Send Enquiry on WhatsApp
+            </button>
+            <p style="font-size:12px;color:#68736c;margin-top:12px">
+              This form opens WhatsApp with your enquiry. It does not
+              automatically reserve a room or collect payments.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>Jalali Comfort Zone</strong>
+        <p>Hotel & Restaurant · University Road, Haripur</p>
+      </div>
+      <p>WhatsApp: <a href="https://wa.me/923434996491">0343 4996491</a></p>
+      <p>© <span id="year"></span> Jalali Comfort Zone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" target="_blank" rel="noopener"
+    href="https://wa.me/923434996491?text=Assalam-o-Alaikum%2C%20Jalali%20Comfort%20Zone%20ke%20bare%20mein%20maloomat%20chahiye."
+    aria-label="Contact Jalali Comfort Zone on WhatsApp"
+    title="Chat on WhatsApp">✆</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("guestName").value.trim();
+      const phone = document.getElementById("guestPhone").value.trim();
+      const room = document.getElementById("roomType").value;
+      const date = document.getElementById("checkin").value || "Not specified";
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        "Assalam-o-Alaikum, Jalali Comfort Zone!%0A%0A" +
+        "I would like to enquire about a booking.%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Contact: " + encodeURIComponent(phone) + "%0A" +
+        "Room: " + encodeURIComponent(room) + "%0A" +
+        "Check-in: " + encodeURIComponent(date) + "%0A" +
+        "Details: " + encodeURIComponent(message);
+
+      window.open("https://wa.me/923434996491?text=" + text, "_blank");
+    });
+  </script>
+
+</body>
+</html>
